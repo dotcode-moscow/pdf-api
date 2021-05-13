@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+### pdf-api ####################################################
+    pdf-api:
+      build:
+        context: ./
+#      network_mode: "host"
+      ports:
+        - "8080:8080"
