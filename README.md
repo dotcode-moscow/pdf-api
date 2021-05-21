@@ -8,7 +8,7 @@
 ## Installation
 [Install Docker and Docker Compose](https://docs.docker.com/compose/install/)
 ```sh
-git clone git@github.com:dotcode-moscow/pdf-api.git
+git clone https://github.com/dotcode-moscow/pdf-api.git
 cd pdf-api
 docker-compose up -d pdf-api
 ```
