@@ -8,3 +8,14 @@ services:
 #      network_mode: "host"
       ports:
         - "8080:8080"
+      logging:
+        options:
+          max-size: 50m
+      deploy:
+        resources:
+          limits:
+            cpus: '0.50'
+            memory: 1024M
+          reservations:
+            cpus: '0.25'
+            memory: 512M
