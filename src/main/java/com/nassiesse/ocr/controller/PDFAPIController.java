@@ -22,6 +22,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 
 @RestController
 public class PDFAPIController {
@@ -39,13 +40,10 @@ public class PDFAPIController {
 		System.out.println(url);
 		try {
 			URL source = new URL(url);
+			String filename = FileUtils.getTempDirectory() + Paths.get(source.getPath()).getFileName().toString();
 
-			File tempDestinationFile =
-					FileUtils.getFile(
-							FileUtils.getTempDirectory(),
-							new File(source.getFile()).getName());
-
-			FileUtils.copyURLToFile(source, tempDestinationFile);
+			DownloadFileFromURL.main(source, filename);
+			File tempDestinationFile = FileUtils.getFile(filename);
 
 			// Load file into PDFBox class
 			document = PDDocument.load(tempDestinationFile);
