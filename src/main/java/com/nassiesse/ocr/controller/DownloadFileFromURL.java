@@ -12,8 +12,8 @@ public class DownloadFileFromURL {
 
     public static void main(URL source, String filename) throws MalformedURLException {
         try {
-            downloadUsingNIO(source, filename);
-            //downloadUsingStream(source, filename);
+            //downloadUsingNIO(source, filename);
+            downloadUsingStream(source, filename);
         } catch (IOException e) {
             e.printStackTrace();
         }
